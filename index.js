@@ -12,7 +12,7 @@ function getDataFromTasteDiveApi(searchTerm, callback) {
       q: searchTerm,
       type: 'movies',
       info: 1,
-      limit: 20,
+      limit: 10,
       k: '314781-MarissaF-SHF4KEGS'
     },
     crossDomain: true,
@@ -25,7 +25,36 @@ function getDataFromTasteDiveApi(searchTerm, callback) {
 }
 
 
+//diplays search result header text
+function renderSearchResultText(data) {
+	return `
+	<h2>All about ${data.Similar.Info[0].Name}</h2>
+	`;
+}
 
+function displaySearchResultText(data) {
+	$('.js-search-title').html(renderSearchResultText(data));
+}
+
+
+
+//diplays movie synopsis
+function renderMovieSynopsis(data) {
+	return `
+	<h3>Synopsis</h3>
+	<p>${data.Similar.Info[0].wTeaser}</p>
+	`;
+}
+
+
+function displayMovieSynopsis(data) {
+	$('.js-synopsis').html(renderMovieSynopsis(data));
+}
+
+
+
+
+//display movie trailer
 function renderMovieVideo(result) {
 	console.log('test', result)
 	return `
@@ -43,17 +72,13 @@ function renderMovieVideo(result) {
 
 function displayMovieVideo(data) {
 	$('.js-video').html(renderMovieVideo(data));
-	console.log('test', data)
 }
 
 
-
+//display other movies like searched movie
 function renderResult(result) {
   return `
-    <div>
-      <p>${result.Name}</p>
-      <p>${result.wTeaser}</p>
-    </div>
+      <li>${result.Name}</li>
   `;
 }
 
@@ -69,9 +94,31 @@ function displayTasteDiveSearchData(data) {
 }
 
 
+//display recommended movies header
+function renderMovieRecsTitle(data) {
+	return `
+		<h3>Other movies like ${data.Similar.Info[0].Name}</h3>
+			<ul class="js-search-results">
+					
+			</ul>
+
+	`;
+}
+
+
+function displayMovieRecsHeader(data) {
+	$('.js-movie-recs').html(renderMovieRecsTitle(data));
+}
+
+
+
+//display functions
 function displayAllResults(data) {
+	displayMovieRecsHeader(data);
 	displayTasteDiveSearchData(data);
 	displayMovieVideo(data);
+	displaySearchResultText(data);
+	displayMovieSynopsis(data);
 
 }
 
