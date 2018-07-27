@@ -60,7 +60,7 @@ function renderMovieVideo(result) {
 	return `
 	<div>
 		<iframe id="inlineFrameExample"
-    		title="Inline Frame Example"
+    		title="${result.Similar.Info[0].Name} Movie Trailer"
    			 width="300"
    			 height="200"
    			 src="${result.Similar.Info[0].yUrl}">
@@ -112,13 +112,34 @@ function displayMovieRecsHeader(data) {
 
 
 
+//handles no results page
+function renderNoResultsFound(data) {
+	$('.js-results').html(displayNoResultsFound (data));
+}
+
+
+function displayNoResultsFound (data) {
+	return `
+	<p>Sorry, no results found for ${data.Similar.Info[0].Name}.</p>
+	`
+}
+
+
+
 //display functions
 function displayAllResults(data) {
-	displayMovieRecsHeader(data);
-	displayTasteDiveSearchData(data);
-	displayMovieVideo(data);
-	displaySearchResultText(data);
-	displayMovieSynopsis(data);
+
+	if (data.Similar.Results.length === 0) {
+		renderNoResultsFound(data);
+
+	} else {
+		displayMovieRecsHeader(data);
+		displayTasteDiveSearchData(data);
+		displayMovieVideo(data);
+		displaySearchResultText(data);
+		displayMovieSynopsis(data); 
+	}
+	
 
 }
 
