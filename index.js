@@ -114,7 +114,7 @@ function displayMovieRecsHeader(data) {
 
 //handles no results page
 function renderNoResultsFound(data) {
-	$('.js-results').html(displayNoResultsFound (data));
+	$('.js-no-results').html(displayNoResultsFound (data));
 }
 
 
@@ -128,6 +128,15 @@ function displayNoResultsFound (data) {
 
 //display functions
 function displayAllResults(data) {
+
+	$('.js-no-results').html('');
+	$('.js-results').html(`<div class="js-search-title"></div>
+
+			<div class="js-video"></div>
+
+			<div class="js-synopsis"></div>
+
+			<div class="js-movie-recs"></div>`);
 
 	if (data.Similar.Results.length === 0) {
 		renderNoResultsFound(data);
