@@ -12,7 +12,7 @@ function getDataFromTasteDiveApi(searchTerm, callback) {
       q: searchTerm,
       type: 'movies',
       info: 1,
-      limit: 10,
+      limit: 18,
       k: '314781-MarissaF-SHF4KEGS'
     },
     crossDomain: true,
@@ -97,17 +97,11 @@ function displayTasteDiveSearchData(data) {
 
 
 
-function test(data) {
-	data.Similar.Results.forEach(obj => {
-		// console.log(obj)
-	})
-}
 
 
-function test2(data) {
-
-let movieName;
-
+//working movie recomendation links
+function handleMovieRecLinks(data) {
+	let movieName;
 
 	$('a').each(function() {
     $(this).on('click', function(e) {
@@ -120,39 +114,10 @@ let movieName;
     			getDataFromTasteDiveApi(movieObj.Name, displayAllResults);
     		}
 		});
-
-
-
-        // console.log($(this).text());
     });
-
-
 });
 
-
-
-	// $(document).on('click', 'a.movieRecs', event => {
-	// 	event.preventDefault();
-	// 	const queryTarget = $(this).text();
-    
-
-
-
-
-	// 	console.log(queryTarget)
-	// 	console.log($(this).text())
-	// })
-	//console.log(data.Similar.Results)
 }
-
-// creates link for movie reccommendation redirects
-// function renderResultLink(result) {
-// let resultLink = result.Name
-
-// 	return `
-
-// 	`
-// }
 
 
 
@@ -216,8 +181,7 @@ function displayAllResults(data) {
 		displayMovieVideo(data);
 		displaySearchResultText(data);
 		displayMovieSynopsis(data); 
-		test(data);
-		test2(data);
+		handleMovieRecLinks(data);
 	
 	}
 	
@@ -242,9 +206,6 @@ function watchSubmit() {
 }
 
 
-// function finalPage() {
-// 	watchSubmit();
-// 	test2();
-// }
+
 
 $(watchSubmit);
