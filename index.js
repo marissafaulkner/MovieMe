@@ -56,7 +56,6 @@ function displayMovieSynopsis(data) {
 
 //display movie trailer
 function renderMovieVideo(result) {
-	console.log('test', result)
 	return `
 	<div>
 		<iframe id="inlineFrameExample"
@@ -77,9 +76,11 @@ function displayMovieVideo(data) {
 
 //display other movies like searched movie
 function renderResult(result) {
+
   return `
-      <li>${result.Name}</li>
+      <li><a class="movieRecs" href="">${result.Name}</a></li>
   `;
+
 }
 
 
@@ -91,7 +92,68 @@ function displayTasteDiveSearchData(data) {
   $('.js-search-results').html(movieResults);
 
 
+
 }
+
+
+
+function test(data) {
+	data.Similar.Results.forEach(obj => {
+		// console.log(obj)
+	})
+}
+
+
+function test2(data) {
+
+let movieName;
+
+
+	$('a').each(function() {
+    $(this).on('click', function(e) {
+    	event.preventDefault();
+
+    	let movieName = $(this).text();
+
+    	data.Similar.Results.forEach(movieObj => {
+    		if (movieName === movieObj.Name) {
+    			getDataFromTasteDiveApi(movieObj.Name, displayAllResults);
+    		}
+		});
+
+
+
+        // console.log($(this).text());
+    });
+
+
+});
+
+
+
+	// $(document).on('click', 'a.movieRecs', event => {
+	// 	event.preventDefault();
+	// 	const queryTarget = $(this).text();
+    
+
+
+
+
+	// 	console.log(queryTarget)
+	// 	console.log($(this).text())
+	// })
+	//console.log(data.Similar.Results)
+}
+
+// creates link for movie reccommendation redirects
+// function renderResultLink(result) {
+// let resultLink = result.Name
+
+// 	return `
+
+// 	`
+// }
+
 
 
 //display recommended movies header
@@ -125,18 +187,25 @@ function displayNoResultsFound (data) {
 }
 
 
+//clears page for next search
+function handlesClearPage() {
+	return `
+	<div class="js-search-title"></div>
+
+	<div class="js-video"></div>
+
+	<div class="js-synopsis"></div>
+
+	<div class="js-movie-recs"></div>
+	`
+}
+
 
 //display functions
 function displayAllResults(data) {
 
 	$('.js-no-results').html('');
-	$('.js-results').html(`<div class="js-search-title"></div>
-
-			<div class="js-video"></div>
-
-			<div class="js-synopsis"></div>
-
-			<div class="js-movie-recs"></div>`);
+	$('.js-results').html(handlesClearPage());
 
 	if (data.Similar.Results.length === 0) {
 		renderNoResultsFound(data);
@@ -147,6 +216,9 @@ function displayAllResults(data) {
 		displayMovieVideo(data);
 		displaySearchResultText(data);
 		displayMovieSynopsis(data); 
+		test(data);
+		test2(data);
+	
 	}
 	
 
@@ -164,7 +236,15 @@ function watchSubmit() {
 
     getDataFromTasteDiveApi(query, displayAllResults);
 
+
+
   });
 }
+
+
+// function finalPage() {
+// 	watchSubmit();
+// 	test2();
+// }
 
 $(watchSubmit);
