@@ -4,28 +4,42 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Movie Me</title>
-	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="float-grid.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<meta name="description" content="Search a movie and get synopsis, trailers, and other movie recommendations all in one place.">
+
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700" rel="stylesheet">
 </head>
 <body>
 	<main role="main">
 
-		<h1 role="header">What to watch?</h1>
-		<p>Can't decide on a movie to watch? Just search any title and get trailer, synopsis, and other movie recommendations all in one place!</p>
+		<section role="region" class="topBox">
 
-		<form action="#" class="js-search-form">
+			<div class="titleBox">
+				<img class="movieIcon" src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/128x128/clapperboard.png">
+				<h1 role="header">Movie Me</h1>
+				<p class="introText">Search any movie and get trailer, synopsis, and other movies like it all in one place!</p>
 
-			<label for="query"></label>
-			<input placeholder="Search Movie Titles" type="text" class="js-query">
+				<div class="searchBar">
+					<form action="#" class="js-search-form">
 
-			<button type="submit">Search</button>
+						<label for="query"></label>
+						<input placeholder="Search Movie Titles" type="text" class="js-query">
 
-		</form>
+						<button type="submit">Search</button>
+
+					</form>
+				</div>
+			</div>
+
+		</section>
 
 		<section role="region" class="js-no-results"></section>
 
-		<section role="region" class="js-results">
+		<section role="region" class="js-results, container">
 
 			<div class="js-search-title"></div>
 
@@ -34,6 +48,7 @@
 			<div class="js-synopsis"></div>
 
 			<div class="js-movie-recs"></div>
+		
 
 		</section>
 

@@ -28,7 +28,9 @@ function getDataFromTasteDiveApi(searchTerm, callback) {
 //diplays search result header text
 function renderSearchResultText(data) {
 	return `
+	<div class="allAboutHeaderBox">
 	<h2>All about ${data.Similar.Info[0].Name}</h2>
+	</div>
 	`;
 }
 
@@ -41,8 +43,10 @@ function displaySearchResultText(data) {
 //diplays movie synopsis
 function renderMovieSynopsis(data) {
 	return `
-	<h3>Synopsis</h3>
-	<p>${data.Similar.Info[0].wTeaser}</p>
+	<div class="boxes"> 
+		<h3>Synopsis</h3>
+		<p>${data.Similar.Info[0].wTeaser}</p>
+	</div>
 	`;
 }
 
@@ -57,7 +61,7 @@ function displayMovieSynopsis(data) {
 //display movie trailer
 function renderMovieVideo(result) {
 	return `
-	<div>
+	<div class="boxes">
 		<iframe id="inlineFrameExample"
     		title="${result.Similar.Info[0].Name} Movie Trailer"
    			 width="300"
@@ -124,10 +128,12 @@ function handleMovieRecLinks(data) {
 //display recommended movies header
 function renderMovieRecsTitle(data) {
 	return `
+	<div class="boxes">
 		<h3>Other movies like ${data.Similar.Info[0].Name}</h3>
 			<ul class="js-search-results">
 					
 			</ul>
+	</div>
 
 	`;
 }
