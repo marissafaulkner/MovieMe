@@ -29,7 +29,7 @@ function getDataFromTasteDiveApi(searchTerm, callback) {
 function renderSearchResultText(data) {
 	return `
 	<div class="allAboutHeaderBox">
-	<h2>All about ${data.Similar.Info[0].Name}</h2>
+		<h2>All about ${data.Similar.Info[0].Name}</h2>
 	</div>
 	`;
 }
@@ -43,7 +43,7 @@ function displaySearchResultText(data) {
 //diplays movie synopsis
 function renderMovieSynopsis(data) {
 	return `
-	<div class="boxes"> 
+	<div class="boxes-synopsis"> 
 		<h3>Synopsis</h3>
 		<p>${data.Similar.Info[0].wTeaser}</p>
 	</div>
@@ -61,7 +61,7 @@ function displayMovieSynopsis(data) {
 //display movie trailer
 function renderMovieVideo(result) {
 	return `
-	<div class="boxes">
+	<div class="boxes-video">
 		<iframe id="inlineFrameExample"
     		title="${result.Similar.Info[0].Name} Movie Trailer"
    			 width="300"
@@ -93,7 +93,10 @@ function displayTasteDiveSearchData(data) {
 	console.log(data)
   const movieResults = data.Similar.Results.map((item, index) => renderResult(item));
 
+  $('.js-results').addClass('container');
+
   $('.js-search-results').html(movieResults);
+
 
 
 
