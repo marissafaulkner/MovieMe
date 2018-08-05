@@ -92,8 +92,7 @@ function renderResult(result) {
 function displayTasteDiveSearchData(data) {
 	console.log(data)
   const movieResults = data.Similar.Results.map((item, index) => renderResult(item));
-
-  $('.js-results').addClass('container');
+	
 
   $('.js-search-results').html(movieResults);
 
@@ -164,11 +163,16 @@ function displayNoResultsFound (data) {
 //clears page for next search
 function handlesClearPage() {
 	return `
-	<div class="js-search-title"></div>
 
-	<div class="js-video"></div>
+	<div class="movieDetails">
+		<div class="js-search-title"></div>
 
-	<div class="js-synopsis"></div>
+		<div class="js-video"></div>
+
+		<div class="js-synopsis"></div>
+
+	</div>
+
 
 	<div class="js-movie-recs"></div>
 	`
