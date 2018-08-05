@@ -19,19 +19,21 @@
 		<section role="region" class="topBox">
 
 			<div class="titleBox">
+
 				<div class="movieHeader">
-				<img class="movieIcon" src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/128x128/clapperboard.png">
-				<h1 role="header">Movie Me</h1>
+					<img class="movieIcon" src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/128x128/clapperboard.png">
+					<h1 role="header">Movie Me</h1>
 				</div>
+
 				<p class="introText">Search any movie and get trailer, synopsis, and other movies like it all in one place!</p>
 
 				<div class="searchBar">
 					<form action="#" class="js-search-form">
 
 						<label for="query"></label>
-						<input placeholder="Search Movie Titles" type="text" class="js-query">
+						<input placeholder="Search Movie Titles" type="text" class="js-query movieSearch">
 
-						<button type="submit">Search</button>
+						<button type="submit" class="searchButton">Search</button>
 
 					</form>
 				</div>
@@ -41,7 +43,7 @@
 
 		<section role="region" class="js-no-results"></section>
 
-		<section role="region" class="js-results reults">
+		<section role="region" class="js-results">
 
 
 			<div class="movieDetails">
@@ -50,9 +52,10 @@
 				<div class="js-video"></div>
 
 				<div class="js-synopsis"></div>
+
+				<div class="js-movie-recs"></div>
 			</div>
 
-			<div class="js-movie-recs"></div>
 		
 
 		</section>

@@ -62,7 +62,7 @@ function displayMovieSynopsis(data) {
 function renderMovieVideo(result) {
 	return `
 	<div class="boxes-video">
-		<iframe id="inlineFrameExample"
+		<iframe
     		title="${result.Similar.Info[0].Name} Movie Trailer"
    			 width="300"
    			 height="200"
@@ -130,11 +130,13 @@ function handleMovieRecLinks(data) {
 //display recommended movies header
 function renderMovieRecsTitle(data) {
 	return `
-	<div class="boxes">
+	<div class="boxes-recs">
+		<span class="centered-recs">
 		<h3>Other movies like ${data.Similar.Info[0].Name}</h3>
 			<ul class="js-search-results">
 					
 			</ul>
+		</span>
 	</div>
 
 	`;
@@ -155,7 +157,9 @@ function renderNoResultsFound(data) {
 
 function displayNoResultsFound (data) {
 	return `
-	<p>Sorry, no results found for ${data.Similar.Info[0].Name}.</p>
+	<div class="noResults">
+	<p class="noResultsText">Sorry, no results found for ${data.Similar.Info[0].Name}.</p>
+	</div>
 	`
 }
 
