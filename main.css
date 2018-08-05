@@ -20,6 +20,7 @@ main {
 	height: 412px;
 	display: block;
 	position: relative;
+	margin-bottom: 10px;
 }
 
 .topBox::after {
@@ -87,7 +88,7 @@ h1 {
   	border: 3px solid #425658;
   	padding: 5px;
   	height: 30px;
-  	width: 300px;
+  	max-width: 300px;
   	border-radius: 5px;
   	outline: none;
   	color: #9DBFAF;
@@ -133,13 +134,13 @@ h2 {
 
 .boxes-video {
 	margin: 0 auto;
-	width: 340px;
+	max-width: 340px;
 	padding-top: 15px;
 }
 
 
 .boxes-synopsis {
-	width: 600px;
+	max-width: 600px;
 	margin: auto;
 }
 
@@ -167,7 +168,7 @@ ul {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
-	width: 600px;
+	max-width: 600px;
 }
 
 a:link {
@@ -201,6 +202,83 @@ a:hover {
 	padding: 60px;
 	font-size: 25px;
 	text-align: center;
+}
+
+
+@media only screen and (max-width : 620px) {
+
+	h1 {
+		font-size: 50px;
+	
+	}
+
+	.movieIcon {
+		width: 80px;
+	}
+
+	.titleBox {
+		border-radius: 0;
+	}
+
+	.topBox {
+		margin-top: -50px;
+	}
+
+	h2 {
+		padding-top: 50px;
+	}
+
+
+}
+
+
+
+
+@media only screen and (max-width : 375px) {
+
+
+	.movieIcon {
+		width: 80px;
+	}
+
+
+	h1 {
+		font-size: 30px;
+	
+	}
+
+	.introText {
+		font-size: 18px;
+	}
+
+	.topBox {
+		margin-top: -50px;
+	}
+
+	.titleBox {
+		border-radius: 0;
+	}
+
+
+	h2 {
+		padding-top: 40px;
+	}
+
+	.movieSearch {
+		height: 20px;
+		font-size: 15px;
+	}
+
+	.searchButton {
+		font-size: 15px;
+	}
+
+	
+
+	ul {
+		padding: 10px 0;
+		max-width: 300px;
+	}
 }
 
 
