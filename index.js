@@ -151,7 +151,11 @@ function displayMovieRecsHeader(data) {
 
 //handles no results page
 function renderNoResultsFound(data) {
-	$('.js-no-results').html(displayNoResultsFound (data));
+	const noResults = $('.js-no-results')
+
+	noResults
+		.prop('hidden', false)
+		.html(displayNoResultsFound (data));
 }
 
 
@@ -187,7 +191,10 @@ function handlesClearPage() {
 function displayAllResults(data) {
 
 	$('.js-no-results').html('');
-	$('.js-results').html(handlesClearPage());
+
+	const resultsPage = $('.js-results')
+		.prop('hidden', false)
+		.html(handlesClearPage());
 
 	if (data.Similar.Results.length === 0) {
 		renderNoResultsFound(data);

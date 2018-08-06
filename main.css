@@ -1,15 +1,10 @@
 * {
 	box-sizing: border-box;
 	font-family: 'Signika', sans-serif;
-	/*font-weight: 300;
-*/}
+}
 
 body {
 	margin: 0;
-}
-
-main {
-	/*font-size: 0;*/
 }
 
 
@@ -203,6 +198,9 @@ a:hover {
 	font-size: 25px;
 	text-align: center;
 }
+
+
+/*medie queries*/
 
 
 @media only screen and (max-width : 620px) {
