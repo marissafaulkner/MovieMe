@@ -178,11 +178,10 @@ function handlesClearPage() {
 		<div class="js-video"></div>
 
 		<div class="js-synopsis"></div>
+		
+		<div class="js-movie-recs"></div>
 
 	</div>
-
-
-	<div class="js-movie-recs"></div>
 	`
 }
 
@@ -193,6 +192,8 @@ function displayAllResults(data) {
 	$('.js-no-results').html('');
 
 	const resultsPage = $('.js-results')
+
+	resultsPage
 		.prop('hidden', false)
 		.html(handlesClearPage());
 
