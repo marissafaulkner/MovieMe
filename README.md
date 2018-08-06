@@ -14,6 +14,10 @@ Clickable list of reccomendations:
 Not found page:
 ![movie not found](Screenshots/noneFound.png)
 
+## Demo
+- [Live Demo](https://marissafaulkner.github.io/MovieMe/)
+
+
 ## Technologies used
 -HTML
 -CSS
