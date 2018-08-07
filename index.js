@@ -2,7 +2,7 @@
 
 // tastedive api key = 314781-MarissaF-SHF4KEGS
 
-const TASTEDIVE_ENDPOINT_URL = 'http://tastedive.com/api/similar';
+const TASTEDIVE_ENDPOINT_URL = 'https://tastedive.com/api/similar';
 
 
 function getDataFromTasteDiveApi(searchTerm, callback) {
