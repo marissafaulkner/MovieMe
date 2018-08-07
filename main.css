@@ -20,7 +20,7 @@ body {
 
 .topBox::after {
 	content: "";
-	background: url('http://socialsharing.info/wp-content/uploads/css-repeating-background-pattern-background-repeat.png');
+	background: url('https://socialsharing.info/wp-content/uploads/css-repeating-background-pattern-background-repeat.png');
 	opacity: 0.6;
 	top: 0;
 	left: 0;
