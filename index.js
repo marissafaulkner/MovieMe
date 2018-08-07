@@ -90,7 +90,6 @@ function renderResult(result) {
 
 
 function displayTasteDiveSearchData(data) {
-	console.log(data)
   const movieResults = data.Similar.Results.map((item, index) => renderResult(item));
 	
 
