@@ -35,7 +35,12 @@ function renderSearchResultText(data) {
 }
 
 function displaySearchResultText(data) {
-	$('.js-search-title').html(renderSearchResultText(data));
+	
+const searchTitle = $('.js-search-title')
+
+searchTitle
+	.prop('hidden', false)
+	.html(renderSearchResultText(data));
 }
 
 
@@ -52,7 +57,12 @@ function renderMovieSynopsis(data) {
 
 
 function displayMovieSynopsis(data) {
-	$('.js-synopsis').html(renderMovieSynopsis(data));
+
+const synopsis = $('.js-synopsis')
+
+synopsis
+	.prop('hidden', false)
+	.html(renderMovieSynopsis(data));
 }
 
 
@@ -74,7 +84,12 @@ function renderMovieVideo(result) {
 
 
 function displayMovieVideo(data) {
-	$('.js-video').html(renderMovieVideo(data));
+
+const video = $('.js-video')
+
+video
+	.prop('hidden', false)
+	.html(renderMovieVideo(data));
 }
 
 
@@ -91,12 +106,11 @@ function renderResult(result) {
 
 function displayTasteDiveSearchData(data) {
   const movieResults = data.Similar.Results.map((item, index) => renderResult(item));
-	
+  const searchResults = $('.js-search-results')
 
-  $('.js-search-results').html(movieResults);
-
-
-
+searchResults
+	.prop('hidden', false)
+	.html(movieResults);
 
 }
 
@@ -143,7 +157,11 @@ function renderMovieRecsTitle(data) {
 
 
 function displayMovieRecsHeader(data) {
-	$('.js-movie-recs').html(renderMovieRecsTitle(data));
+const movieRecs = $('.js-movie-recs')
+
+movieRecs
+	.prop('hidden', false)
+	.html(renderMovieRecsTitle(data));
 }
 
 
